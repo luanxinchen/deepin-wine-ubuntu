@@ -74,13 +74,13 @@ case $num2 in
 		install_menu;;
         2)
                 echo -e ">>>安装企业微信"
-                sudo dpkg -i install/deepin.com.weixin.work_2.4.16.1347deepin1_i386.deb
+                sudo dpkg -i install/deepin.com.weixin.work_2.7.8.1239deepin1_i386.deb
                 echo -e "\033[41;37m 安装完成，请打开企业微信，在设置中关闭自动更新！！！ \033[0m"
                 read -p "按Enter键继续...."
 		install_menu;;
         3)
                 echo -e ">>>安装微信"
-                sudo dpkg -i install/deepin.com.wechat_2.6.2.31deepin0_i386.deb
+                sudo dpkg -i install/deepin.com.wechat_2.6.8deepin0_i386.deb
                 echo -e "\033[41;37m 安装完成，请打开微信，在设置中关闭自动更新！！！ \033[0m"
                 read -p "按Enter键继续...."
 		install_menu;;

@@ -70,27 +70,27 @@ function install_wine(){
 }
 function install_menu(){
 option2=$(whiptail --title "安装Windows程序" --clear --menu "请选择" 12 50 3 \
-    "1" "安装企业微信2.4.16" \
-    "2" "安装微信2.6.2.31" \
+    "1" "安装企业微信2.7.8" \
+    "2" "安装微信2.6.8" \
     "x" "运行其他window程序（beta）" \
     3>&1 1>&2 2>&3)
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
     case $option2 in
     1)
-	    if(whiptail --title "安装确认" --yesno "请确保Deepin-Wine已经安装!!! 确认开始安装企业微信2.4.16吗?" 10 50)then
+	    if(whiptail --title "安装确认" --yesno "请确保Deepin-Wine已经安装!!! 确认开始安装企业微信2.7.8吗?" 10 50)then
 				{
 					sleep 1
 					echo 5
 					#判断包是否准备就绪
-					if [ ! -f "install/deepin.com.weixin.work_2.4.16.1347deepin1_i386.deb" ];then
+					if [ ! -f "install/deepin.com.weixin.work_2.7.8.1239deepin1_i386.deb" ];then
 					wget -q http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.weixin.work/deepin.com.weixin.work_2.4.16.1347deepin1_i386.deb -P install/ >/dev/null 
 					fi
 					sleep 1
 					echo 55
-					sudo dpkg -i install/deepin.com.weixin.work_2.4.16.1347deepin1_i386.deb >/dev/null
+					sudo dpkg -i install/deepin.com.weixin.work_2.7.8.1239deepin1_i386.deb >/dev/null
 					sleep 10
-				} | whiptail --gauge "正在安装企业微信2.4.16，过程可能需要几分钟请稍候........." 6 60 0 &&
+				} | whiptail --gauge "正在安装企业微信2.7.8，过程可能需要几分钟请稍候........." 6 60 0 &&
 				if [ `dpkg -l | grep deepin.com.weixin.work |wc -l` -ne 0 ];then
 				whiptail --title "deepin-wine" --msgbox "安装完成，请打开程序，在设置中关闭自动更新！" 10 60
 				else
@@ -101,18 +101,18 @@ if [ $exitstatus = 0 ]; then
 				main_menu;
 			fi;;
 		2)
-			if(whiptail --title "安装确认" --yesno "请确保Deepin-Wine已经安装!!! 确认开始安装微信2.6.2吗?" 10 50)then
+			if(whiptail --title "安装确认" --yesno "请确保Deepin-Wine已经安装!!! 确认开始安装微信2.6.8吗?" 10 50)then
 				{
 					sleep 1
 					echo 5
-					if [ ! -f "install/deepin.com.wechat_2.6.2.31deepin0_i386.deb" ];then
+					if [ ! -f "install/deepin.com.wechat_2.6.8deepin0_i386.deb" ];then
 					wget -q http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/deepin.com.wechat_2.6.2.31deepin0_i386.deb -P install/ >/dev/null 
 					fi
 					sleep 1 
 					echo 55
-					sudo dpkg -i install/deepin.com.weixin.work_2.4.16.1347deepin1_i386.deb >/dev/null 
+					sudo dpkg -i install/deepin.com.wechat_2.6.8deepin0_i386.deb >/dev/null 
 					sleep 10
-				} | whiptail --gauge "正在安装微信2.6.2，过程可能需要几分钟请稍候........." 6 60 0 &&
+				} | whiptail --gauge "正在安装微信2.6.8，过程可能需要几分钟请稍候........." 6 60 0 &&
 				if [ `dpkg -l | grep deepin.com.wechat |wc -l` -ne 0 ];then
 				whiptail --title "deepin-wine" --msgbox "安装完成，请打开程序，在设置中关闭自动更新！" 10 60
 				else
